@@ -133,7 +133,7 @@
 		0406A90718D7BF6C004870F4 /* MultiProductViewer */ = {
 			isa = PBXGroup;
 			children = (
-				0406A93018D7BFA7004870F4 /* RBSMultiProductViewController */,
+				0406A93018D7BFA7004870F4 /* TBTMultiProductViewController */,
 				0406A91018D7BF6C004870F4 /* TBTAppDelegate.h */,
 				0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */,
 				0450A45418DB43D800855185 /* TBTDummyViewController.h */,
@@ -175,7 +175,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0406A93018D7BFA7004870F4 /* RBSMultiProductViewController */ = {
+		0406A93018D7BFA7004870F4 /* TBTMultiProductViewController */ = {
 			isa = PBXGroup;
 			children = (
 				0406A93418D7BFED004870F4 /* TBTProduct.h */,
@@ -191,7 +191,7 @@
 				048872E418D9DFA20033FB5B /* TBTProductClusterHeaderCell.m */,
 				0450A45918DC432B00855185 /* TBTProductClusterHeaderCell.xib */,
 			);
-			path = RBSMultiProductViewController;
+			path = TBTMultiProductViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
