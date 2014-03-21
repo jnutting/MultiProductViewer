@@ -238,9 +238,9 @@
 		0406A8F618D7BF6C004870F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = RBS;
+				CLASSPREFIX = TBT;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = Rebisoft;
+				ORGANIZATIONNAME = "thoughtbot, inc.";
 				TargetAttributes = {
 					0406A91818D7BF6C004870F4 = {
 						TestTargetID = 0406A8FD18D7BF6C004870F4;

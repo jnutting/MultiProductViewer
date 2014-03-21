@@ -3,7 +3,7 @@
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
-//  Copyright (c) 2014 thoughtbot, inc.. All rights reserved.
+//  Copyright (c) 2014 thoughtbot, inc. All rights reserved.
 //
 
 #import "TBTProductCluster.h"
