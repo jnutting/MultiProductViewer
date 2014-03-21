@@ -7,6 +7,10 @@
 //
 
 #import "RBSAppDelegate.h"
+#import "RBSMultiProductViewController.h"
+#import "RBSProduct.h"
+#import "RBSProductCluster.h"
+#import "RBSDummyViewController.h"
 
 @implementation RBSAppDelegate
 
@@ -16,6 +20,43 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    /*
+    NSArray *items = @[
+                       @{@"identifier" : @"825459863",
+                         @"name" : @"First App",
+                         @"details" : @"this is an app",
+                         @"imageURLString" : @"http://rebisoft.com/_Media/crunchy-copy_med.png"},
+                       @{@"identifier" : @"1328473428",
+                         @"name" : @"Second App",
+                         @"details" : @"this is an app",
+                         @"imageURLString" : @"http://foo.com/image.png"},
+                       @{@"identifier" : @"1328473428",
+                         @"name" : @"Third App",
+                         @"details" : @"this is an 1 2 3 4 5 6 7 8 9 0 app skljflksjflksdj fkls jflk sjdflk sdklf skld jfklsajd fklsj dfkls djfkl jsdklf sdklfj ksladjf ",
+                         @"imageURLString" : @"http://foo.com/image.png"},
+                       @{@"identifier" : @"1328473428",
+                         @"name" : @"Fourth App",
+                         @"details" : @"this is an app",
+                         @"imageURLString" : @"http://foo.com/image.png"},
+                       @{@"identifier" : @"1328473428",
+                         @"name" : @"Fifth App",
+                         @"details" : @"this is an app",
+                         @"imageURLString" : @"http://foo.com/image.png"},
+                       @{@"identifier" : @"1328473428",
+                         @"name" : @"Sixth App",
+                         @"details" : @"this is an app",
+                         @"imageURLString" : @"http://foo.com/image.png"},
+                       ];
+    NSArray *products = [RBSProduct productsWithArray:items];
+    
+    RBSMultiProductViewController *controller = [[RBSMultiProductViewController alloc] init];
+    controller.productClusters = @[[RBSProductCluster productClusterWithTitle:@"First group" products:products],
+                                   [RBSProductCluster productClusterWithTitle:@"Second Group" products:products]];
+    controller.title = @"Other Apps from Rebisoft, the app company";
+     */
+    RBSDummyViewController *controller = [[RBSDummyViewController alloc] initWithNibName:@"RBSDummyViewController" bundle:nil];
+    self.window.rootViewController = controller;
     return YES;
 }
 

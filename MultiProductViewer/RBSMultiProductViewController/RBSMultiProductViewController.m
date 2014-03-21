@@ -1,0 +1,170 @@
+//
+//  RBSMultiProductViewController.m
+//  MultiProductViewer
+//
+//  Created by JN on 2014-3-19.
+//  Copyright (c) 2014 Rebisoft. All rights reserved.
+//
+
+#import "RBSMultiProductViewController.h"
+#import "RBSProductCluster.h"
+#import "RBSProduct.h"
+#import "RBSProductCell.h"
+#import "RBSProductClusterHeaderCell.h"
+#import <StoreKit/StoreKit.h>
+
+@implementation RBSMultiProductViewController
+
++ (void)runWithTitle:(NSString *)title
+     productClusters:(NSArray *)clusters
+            delegate:(id <RBSMultiProductViewControllerDelegate>)delegate {
+    RBSMultiProductViewController *c = [[self alloc] init];
+    c.title = title;
+    c.productClusters = clusters;
+    c.delegate = delegate;
+    [c run];
+}
+
+- (void)run {
+    UIViewController *appRoot = [[UIApplication sharedApplication].windows.firstObject rootViewController];
+    UINavigationController *navCon = [[UINavigationController alloc] init];
+    navCon.viewControllers = @[self];
+    [appRoot presentViewController:navCon animated:YES completion:nil];
+}
+
+- (instancetype)init {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    return [self initWithCollectionViewLayout:layout];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                  target:self
+                                                                                  action:@selector(cancel:)];
+    [cancelButton setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}
+                                forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Register cells and supplementary views
+    [self.collectionView registerNib:[UINib nibWithNibName:@"RBSProductCell" bundle:nil]
+          forCellWithReuseIdentifier:@"Product"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"RBSProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+    
+    // Configure flow layout
+    UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 20, 0);
+    layout.minimumLineSpacing = 0;
+    layout.headerReferenceSize = CGSizeMake(100, 30);
+    
+    self.collectionView.collectionViewLayout = layout;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark Collection View delegate & datasource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [self.productClusters count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    RBSProductCluster *productCluster = self.productClusters[section];
+    return [productCluster.products count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    RBSProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Product"
+                                                                     forIndexPath:indexPath];
+    RBSProductCluster *cluster = self.productClusters[indexPath.section];
+    cell.product = cluster.products[indexPath.row];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
+    productViewController.delegate = self.delegate;
+    
+    NSString *identifier = [self productAtIndexPath:indexPath].identifier;
+    NSDictionary *params = @{SKStoreProductParameterITunesItemIdentifier : identifier};
+    [productViewController loadProductWithParameters:params
+                                     completionBlock:^(BOOL result, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+#if TARGET_IPHONE_SIMULATOR
+        if (YES)  // In the simulator, pretend this always works (it really never does)
+#else
+        if (result)
+#endif
+        {
+            NSLog(@"we have a result! Time to show the store view controller");
+            [self dismissViewControllerAnimated:NO completion:^{
+                [[[[[UIApplication sharedApplication] windows] firstObject] rootViewController]
+                 presentViewController:productViewController animated:NO completion:nil];
+            }];
+            
+            
+        } else {
+            // The default store GUI isn't going to display. Give the user some feedback.
+            [[[UIAlertView alloc] initWithTitle:@"App Store Error"
+                                        message:[NSString stringWithFormat:
+                                                 @"An error occurred while trying to show an app with identifier '%@': %@",
+                                                 identifier, [error localizedDescription]]
+                                       delegate:self
+                              cancelButtonTitle:@"That's too bad."
+                              otherButtonTitles:nil] show];
+        }
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    }];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
+    return YES;
+}
+
+#pragma mark - Flow Layout Delegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(320, 116);
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqual:UICollectionElementKindSectionHeader]) {
+        RBSProductClusterHeaderCell *cell = [self.collectionView
+                                             dequeueReusableSupplementaryViewOfKind:kind
+                                             withReuseIdentifier:@"SectionHeader"
+                                             forIndexPath:indexPath];
+        
+        cell.headerText = [self.productClusters[indexPath.section] title];
+        return cell;
+    }
+    return nil;
+}
+
+#pragma mark private
+
+- (RBSProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
+    RBSProductCluster *cluster = self.productClusters[indexPath.section];
+    return cluster.products[indexPath.row];
+}
+
+- (IBAction)cancel:(id)sender {
+    NSLog(@"bar button item cancel");
+    [self.delegate multiProductViewControllerDidFinish:self];
+}
+
+@end

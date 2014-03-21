@@ -1,0 +1,43 @@
+{ "productSpecs" : [
+        {
+            "title" : "Awesome Games",
+            "products" : [
+                    {
+                          "name" : "FlippyBit",
+                          "details" : "Party like it's 1979! Flippy Bit takes the great action of early 2014, and makes it look like it's on an old Atari.",
+                          "identifier" : "825459863",
+                          "imageURLString" : "http://rebisoft.com/appicons/flippybit512.png"
+                    },
+                    {
+                          "name" : "Scribattle",
+                          "details" : "Put your finger-flicking abilities to the test in this all-but-forgotten 2009 App Store hit game!",
+                          "identifier" : "301618970",
+                          "imageURLString" : "http://rebisoft.com/appicons/scribattle100.png"
+                    },
+                    {
+                          "name" : "Diabolotros",
+                          "details" : "Imagine Space Invaders designed for people with keen eyesight and excellent balance.",
+                          "identifier" : "315350668",
+                          "imageURLString" : "http://rebisoft.com/appicons/diabolotros512.png"
+                    },
+            ]
+        },
+        {
+            "title" : "Free Games",
+            "products" : [
+                    {
+                          "name" : "Scribattle Lite",
+                          "details" : "The free cousin of Scribattle. Try before you buy! And then, buy!",
+                          "identifier" : "306058202",
+                          "imageURLString" : "http://rebisoft.com/appicons/scribattle100.png"
+                    },
+                    {
+                          "name" : "Diabolotros Lite",
+                          "details" : "This free version of Diabolotros lets you come to grips with the Supergun and, perhaps, THE BOMB.",
+                          "identifier" : "315938586",
+                          "imageURLString" : "http://rebisoft.com/appicons/diabolotros512.png"
+                    },
+            ]
+        },
+    ]
+}
