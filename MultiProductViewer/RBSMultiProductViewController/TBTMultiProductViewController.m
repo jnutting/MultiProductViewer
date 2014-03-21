@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Rebisoft. All rights reserved.
 //
 
-#import "RBSMultiProductViewController.h"
-#import "RBSProductCluster.h"
-#import "RBSProduct.h"
-#import "RBSProductCell.h"
-#import "RBSProductClusterHeaderCell.h"
+#import "TBTMultiProductViewController.h"
+#import "TBTProductCluster.h"
+#import "TBTProduct.h"
+#import "TBTProductCell.h"
+#import "TBTProductClusterHeaderCell.h"
 #import <StoreKit/StoreKit.h>
 
-@implementation RBSMultiProductViewController
+@implementation TBTMultiProductViewController
 
 + (void)runWithTitle:(NSString *)title
      productClusters:(NSArray *)clusters
             delegate:(id <RBSMultiProductViewControllerDelegate>)delegate {
-    RBSMultiProductViewController *c = [[self alloc] init];
+    TBTMultiProductViewController *c = [[self alloc] init];
     c.title = title;
     c.productClusters = clusters;
     c.delegate = delegate;
@@ -51,9 +51,9 @@
     [super viewDidLoad];
     
     // Register cells and supplementary views
-    [self.collectionView registerNib:[UINib nibWithNibName:@"RBSProductCell" bundle:nil]
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:nil]
           forCellWithReuseIdentifier:@"Product"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"RBSProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
     
     // Configure flow layout
     UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
@@ -72,15 +72,15 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    RBSProductCluster *productCluster = self.productClusters[section];
+    TBTProductCluster *productCluster = self.productClusters[section];
     return [productCluster.products count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RBSProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Product"
+    TBTProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Product"
                                                                      forIndexPath:indexPath];
-    RBSProductCluster *cluster = self.productClusters[indexPath.section];
+    TBTProductCluster *cluster = self.productClusters[indexPath.section];
     cell.product = cluster.products[indexPath.row];
     return cell;
 }
@@ -144,7 +144,7 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqual:UICollectionElementKindSectionHeader]) {
-        RBSProductClusterHeaderCell *cell = [self.collectionView
+        TBTProductClusterHeaderCell *cell = [self.collectionView
                                              dequeueReusableSupplementaryViewOfKind:kind
                                              withReuseIdentifier:@"SectionHeader"
                                              forIndexPath:indexPath];
@@ -157,8 +157,8 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
 
 #pragma mark private
 
-- (RBSProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
-    RBSProductCluster *cluster = self.productClusters[indexPath.section];
+- (TBTProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
+    TBTProductCluster *cluster = self.productClusters[indexPath.section];
     return cluster.products[indexPath.row];
 }
 

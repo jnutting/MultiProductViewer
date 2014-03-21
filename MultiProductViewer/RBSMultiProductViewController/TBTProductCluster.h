@@ -1,5 +1,5 @@
 //
-//  RBSProductCluster.h
+//  TBTProductCluster.h
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RBSProductCluster : UICollectionViewController
+@interface TBTProductCluster : UICollectionViewController
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSArray *products;

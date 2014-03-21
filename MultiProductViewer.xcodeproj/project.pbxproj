@@ -12,22 +12,22 @@
 		0406A90618D7BF6C004870F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A90518D7BF6C004870F4 /* UIKit.framework */; };
 		0406A90C18D7BF6C004870F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0406A90A18D7BF6C004870F4 /* InfoPlist.strings */; };
 		0406A90E18D7BF6C004870F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A90D18D7BF6C004870F4 /* main.m */; };
-		0406A91218D7BF6C004870F4 /* RBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A91118D7BF6C004870F4 /* RBSAppDelegate.m */; };
+		0406A91218D7BF6C004870F4 /* TBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */; };
 		0406A91418D7BF6C004870F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0406A91318D7BF6C004870F4 /* Images.xcassets */; };
 		0406A91B18D7BF6C004870F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A91A18D7BF6C004870F4 /* XCTest.framework */; };
 		0406A91C18D7BF6C004870F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A90118D7BF6C004870F4 /* Foundation.framework */; };
 		0406A91D18D7BF6C004870F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A90518D7BF6C004870F4 /* UIKit.framework */; };
 		0406A92518D7BF6C004870F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0406A92318D7BF6C004870F4 /* InfoPlist.strings */; };
 		0406A92718D7BF6C004870F4 /* MultiProductViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A92618D7BF6C004870F4 /* MultiProductViewerTests.m */; };
-		0406A93618D7BFED004870F4 /* RBSProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93518D7BFED004870F4 /* RBSProduct.m */; };
-		0406A93918D9CE82004870F4 /* RBSMultiProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93818D9CE82004870F4 /* RBSMultiProductViewController.m */; };
-		0406A93C18D9D595004870F4 /* RBSProductCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93B18D9D595004870F4 /* RBSProductCluster.m */; };
-		0450A45718DB43D800855185 /* RBSDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450A45518DB43D800855185 /* RBSDummyViewController.m */; };
-		0450A45818DB43D800855185 /* RBSDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450A45618DB43D800855185 /* RBSDummyViewController.xib */; };
-		0450A45A18DC432B00855185 /* RBSProductClusterHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450A45918DC432B00855185 /* RBSProductClusterHeaderCell.xib */; };
-		048872E218D9D8F80033FB5B /* RBSProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048872E118D9D8F80033FB5B /* RBSProductCell.m */; };
-		048872E518D9DFA20033FB5B /* RBSProductClusterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048872E418D9DFA20033FB5B /* RBSProductClusterHeaderCell.m */; };
-		048872E718D9EF910033FB5B /* RBSProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048872E618D9EF910033FB5B /* RBSProductCell.xib */; };
+		0406A93618D7BFED004870F4 /* TBTProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93518D7BFED004870F4 /* TBTProduct.m */; };
+		0406A93918D9CE82004870F4 /* TBTMultiProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93818D9CE82004870F4 /* TBTMultiProductViewController.m */; };
+		0406A93C18D9D595004870F4 /* TBTProductCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A93B18D9D595004870F4 /* TBTProductCluster.m */; };
+		0450A45718DB43D800855185 /* TBTDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450A45518DB43D800855185 /* TBTDummyViewController.m */; };
+		0450A45818DB43D800855185 /* TBTDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450A45618DB43D800855185 /* TBTDummyViewController.xib */; };
+		0450A45A18DC432B00855185 /* TBTProductClusterHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0450A45918DC432B00855185 /* TBTProductClusterHeaderCell.xib */; };
+		048872E218D9D8F80033FB5B /* TBTProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048872E118D9D8F80033FB5B /* TBTProductCell.m */; };
+		048872E518D9DFA20033FB5B /* TBTProductClusterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048872E418D9DFA20033FB5B /* TBTProductClusterHeaderCell.m */; };
+		048872E718D9EF910033FB5B /* TBTProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048872E618D9EF910033FB5B /* TBTProductCell.xib */; };
 		04D0F2EA18DC4BAE00E5C133 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D0F2E918DC4BAE00E5C133 /* example.json */; };
 /* End PBXBuildFile section */
 
@@ -50,29 +50,29 @@
 		0406A90B18D7BF6C004870F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0406A90D18D7BF6C004870F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0406A90F18D7BF6C004870F4 /* MultiProductViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiProductViewer-Prefix.pch"; sourceTree = "<group>"; };
-		0406A91018D7BF6C004870F4 /* RBSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBSAppDelegate.h; sourceTree = "<group>"; };
-		0406A91118D7BF6C004870F4 /* RBSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBSAppDelegate.m; sourceTree = "<group>"; };
+		0406A91018D7BF6C004870F4 /* TBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTAppDelegate.h; sourceTree = "<group>"; };
+		0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTAppDelegate.m; sourceTree = "<group>"; };
 		0406A91318D7BF6C004870F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0406A91918D7BF6C004870F4 /* MultiProductViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiProductViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0406A91A18D7BF6C004870F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0406A92218D7BF6C004870F4 /* MultiProductViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiProductViewerTests-Info.plist"; sourceTree = "<group>"; };
 		0406A92418D7BF6C004870F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0406A92618D7BF6C004870F4 /* MultiProductViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiProductViewerTests.m; sourceTree = "<group>"; };
-		0406A93418D7BFED004870F4 /* RBSProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSProduct.h; sourceTree = "<group>"; };
-		0406A93518D7BFED004870F4 /* RBSProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSProduct.m; sourceTree = "<group>"; };
-		0406A93718D9CE82004870F4 /* RBSMultiProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSMultiProductViewController.h; sourceTree = "<group>"; };
-		0406A93818D9CE82004870F4 /* RBSMultiProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSMultiProductViewController.m; sourceTree = "<group>"; };
-		0406A93A18D9D595004870F4 /* RBSProductCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSProductCluster.h; sourceTree = "<group>"; };
-		0406A93B18D9D595004870F4 /* RBSProductCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSProductCluster.m; sourceTree = "<group>"; };
-		0450A45418DB43D800855185 /* RBSDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSDummyViewController.h; sourceTree = "<group>"; };
-		0450A45518DB43D800855185 /* RBSDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSDummyViewController.m; sourceTree = "<group>"; };
-		0450A45618DB43D800855185 /* RBSDummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSDummyViewController.xib; sourceTree = "<group>"; };
-		0450A45918DC432B00855185 /* RBSProductClusterHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSProductClusterHeaderCell.xib; sourceTree = "<group>"; };
-		048872E018D9D8F80033FB5B /* RBSProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSProductCell.h; sourceTree = "<group>"; };
-		048872E118D9D8F80033FB5B /* RBSProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSProductCell.m; sourceTree = "<group>"; };
-		048872E318D9DFA20033FB5B /* RBSProductClusterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSProductClusterHeaderCell.h; sourceTree = "<group>"; };
-		048872E418D9DFA20033FB5B /* RBSProductClusterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSProductClusterHeaderCell.m; sourceTree = "<group>"; };
-		048872E618D9EF910033FB5B /* RBSProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSProductCell.xib; sourceTree = "<group>"; };
+		0406A93418D7BFED004870F4 /* TBTProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTProduct.h; sourceTree = "<group>"; };
+		0406A93518D7BFED004870F4 /* TBTProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTProduct.m; sourceTree = "<group>"; };
+		0406A93718D9CE82004870F4 /* TBTMultiProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTMultiProductViewController.h; sourceTree = "<group>"; };
+		0406A93818D9CE82004870F4 /* TBTMultiProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTMultiProductViewController.m; sourceTree = "<group>"; };
+		0406A93A18D9D595004870F4 /* TBTProductCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTProductCluster.h; sourceTree = "<group>"; };
+		0406A93B18D9D595004870F4 /* TBTProductCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTProductCluster.m; sourceTree = "<group>"; };
+		0450A45418DB43D800855185 /* TBTDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTDummyViewController.h; sourceTree = "<group>"; };
+		0450A45518DB43D800855185 /* TBTDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTDummyViewController.m; sourceTree = "<group>"; };
+		0450A45618DB43D800855185 /* TBTDummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTDummyViewController.xib; sourceTree = "<group>"; };
+		0450A45918DC432B00855185 /* TBTProductClusterHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTProductClusterHeaderCell.xib; sourceTree = "<group>"; };
+		048872E018D9D8F80033FB5B /* TBTProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTProductCell.h; sourceTree = "<group>"; };
+		048872E118D9D8F80033FB5B /* TBTProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTProductCell.m; sourceTree = "<group>"; };
+		048872E318D9DFA20033FB5B /* TBTProductClusterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTProductClusterHeaderCell.h; sourceTree = "<group>"; };
+		048872E418D9DFA20033FB5B /* TBTProductClusterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTProductClusterHeaderCell.m; sourceTree = "<group>"; };
+		048872E618D9EF910033FB5B /* TBTProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTProductCell.xib; sourceTree = "<group>"; };
 		04D0F2E918DC4BAE00E5C133 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,11 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				0406A93018D7BFA7004870F4 /* RBSMultiProductViewController */,
-				0406A91018D7BF6C004870F4 /* RBSAppDelegate.h */,
-				0406A91118D7BF6C004870F4 /* RBSAppDelegate.m */,
-				0450A45418DB43D800855185 /* RBSDummyViewController.h */,
-				0450A45518DB43D800855185 /* RBSDummyViewController.m */,
-				0450A45618DB43D800855185 /* RBSDummyViewController.xib */,
+				0406A91018D7BF6C004870F4 /* TBTAppDelegate.h */,
+				0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */,
+				0450A45418DB43D800855185 /* TBTDummyViewController.h */,
+				0450A45518DB43D800855185 /* TBTDummyViewController.m */,
+				0450A45618DB43D800855185 /* TBTDummyViewController.xib */,
 				04D0F2E918DC4BAE00E5C133 /* example.json */,
 				0406A91318D7BF6C004870F4 /* Images.xcassets */,
 				0406A90818D7BF6C004870F4 /* Supporting Files */,
@@ -178,18 +178,18 @@
 		0406A93018D7BFA7004870F4 /* RBSMultiProductViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0406A93418D7BFED004870F4 /* RBSProduct.h */,
-				0406A93518D7BFED004870F4 /* RBSProduct.m */,
-				0406A93A18D9D595004870F4 /* RBSProductCluster.h */,
-				0406A93B18D9D595004870F4 /* RBSProductCluster.m */,
-				0406A93718D9CE82004870F4 /* RBSMultiProductViewController.h */,
-				0406A93818D9CE82004870F4 /* RBSMultiProductViewController.m */,
-				048872E018D9D8F80033FB5B /* RBSProductCell.h */,
-				048872E118D9D8F80033FB5B /* RBSProductCell.m */,
-				048872E618D9EF910033FB5B /* RBSProductCell.xib */,
-				048872E318D9DFA20033FB5B /* RBSProductClusterHeaderCell.h */,
-				048872E418D9DFA20033FB5B /* RBSProductClusterHeaderCell.m */,
-				0450A45918DC432B00855185 /* RBSProductClusterHeaderCell.xib */,
+				0406A93418D7BFED004870F4 /* TBTProduct.h */,
+				0406A93518D7BFED004870F4 /* TBTProduct.m */,
+				0406A93A18D9D595004870F4 /* TBTProductCluster.h */,
+				0406A93B18D9D595004870F4 /* TBTProductCluster.m */,
+				0406A93718D9CE82004870F4 /* TBTMultiProductViewController.h */,
+				0406A93818D9CE82004870F4 /* TBTMultiProductViewController.m */,
+				048872E018D9D8F80033FB5B /* TBTProductCell.h */,
+				048872E118D9D8F80033FB5B /* TBTProductCell.m */,
+				048872E618D9EF910033FB5B /* TBTProductCell.xib */,
+				048872E318D9DFA20033FB5B /* TBTProductClusterHeaderCell.h */,
+				048872E418D9DFA20033FB5B /* TBTProductClusterHeaderCell.m */,
+				0450A45918DC432B00855185 /* TBTProductClusterHeaderCell.xib */,
 			);
 			path = RBSMultiProductViewController;
 			sourceTree = "<group>";
@@ -271,11 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0406A90C18D7BF6C004870F4 /* InfoPlist.strings in Resources */,
-				0450A45818DB43D800855185 /* RBSDummyViewController.xib in Resources */,
+				0450A45818DB43D800855185 /* TBTDummyViewController.xib in Resources */,
 				04D0F2EA18DC4BAE00E5C133 /* example.json in Resources */,
-				0450A45A18DC432B00855185 /* RBSProductClusterHeaderCell.xib in Resources */,
+				0450A45A18DC432B00855185 /* TBTProductClusterHeaderCell.xib in Resources */,
 				0406A91418D7BF6C004870F4 /* Images.xcassets in Resources */,
-				048872E718D9EF910033FB5B /* RBSProductCell.xib in Resources */,
+				048872E718D9EF910033FB5B /* TBTProductCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,14 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0406A93918D9CE82004870F4 /* RBSMultiProductViewController.m in Sources */,
-				048872E518D9DFA20033FB5B /* RBSProductClusterHeaderCell.m in Sources */,
-				0406A91218D7BF6C004870F4 /* RBSAppDelegate.m in Sources */,
-				0406A93C18D9D595004870F4 /* RBSProductCluster.m in Sources */,
-				0450A45718DB43D800855185 /* RBSDummyViewController.m in Sources */,
+				0406A93918D9CE82004870F4 /* TBTMultiProductViewController.m in Sources */,
+				048872E518D9DFA20033FB5B /* TBTProductClusterHeaderCell.m in Sources */,
+				0406A91218D7BF6C004870F4 /* TBTAppDelegate.m in Sources */,
+				0406A93C18D9D595004870F4 /* TBTProductCluster.m in Sources */,
+				0450A45718DB43D800855185 /* TBTDummyViewController.m in Sources */,
 				0406A90E18D7BF6C004870F4 /* main.m in Sources */,
-				0406A93618D7BFED004870F4 /* RBSProduct.m in Sources */,
-				048872E218D9D8F80033FB5B /* RBSProductCell.m in Sources */,
+				0406A93618D7BFED004870F4 /* TBTProduct.m in Sources */,
+				048872E218D9D8F80033FB5B /* TBTProductCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

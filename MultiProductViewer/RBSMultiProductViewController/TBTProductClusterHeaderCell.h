@@ -1,5 +1,5 @@
 //
-//  RBSProductClusterHeaderCell.h
+//  TBTProductClusterHeaderCell.h
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RBSProductClusterHeaderCell : UICollectionReusableView
+@interface TBTProductClusterHeaderCell : UICollectionReusableView
 
 @property (copy, nonatomic) NSString *headerText;
 

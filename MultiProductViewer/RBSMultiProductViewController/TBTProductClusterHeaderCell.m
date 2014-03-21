@@ -1,20 +1,20 @@
 //
-//  RBSProductClusterHeaderCell.m
+//  TBTProductClusterHeaderCell.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
 //  Copyright (c) 2014 Rebisoft. All rights reserved.
 //
 
-#import "RBSProductClusterHeaderCell.h"
+#import "TBTProductClusterHeaderCell.h"
 
-@interface RBSProductClusterHeaderCell ()
+@interface TBTProductClusterHeaderCell ()
 
 @property (strong, nonatomic) IBOutlet UILabel *detailsLabel;
 
 @end
 
-@implementation RBSProductClusterHeaderCell
+@implementation TBTProductClusterHeaderCell
 
 - (void)setHeaderText:(NSString *)headerText {
     if (![headerText isEqual:_headerText]) {

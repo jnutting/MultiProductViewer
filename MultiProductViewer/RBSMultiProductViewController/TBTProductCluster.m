@@ -1,18 +1,18 @@
 //
-//  RBSProductCluster.m
+//  TBTProductCluster.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
 //  Copyright (c) 2014 Rebisoft. All rights reserved.
 //
 
-#import "RBSProductCluster.h"
-#import "RBSProduct.h"
+#import "TBTProductCluster.h"
+#import "TBTProduct.h"
 
-@implementation RBSProductCluster
+@implementation TBTProductCluster
 
 + (instancetype)productClusterWithTitle:(NSString *)title products:(NSArray *)products {
-    RBSProductCluster *cluster = [[self alloc] init];
+    TBTProductCluster *cluster = [[self alloc] init];
     cluster.title = title;
     cluster.products = products;
     return cluster;
@@ -23,8 +23,8 @@
     for (NSDictionary *spec in specs) {
         NSString *title = spec[@"title"];
         NSArray *productSpecs = spec[@"products"];
-        RBSProductCluster *cluster = [self productClusterWithTitle:title
-                                                          products:[RBSProduct productsWithArray:productSpecs]];
+        TBTProductCluster *cluster = [self productClusterWithTitle:title
+                                                          products:[TBTProduct productsWithArray:productSpecs]];
         [clusters addObject:cluster];
     }
     return clusters;

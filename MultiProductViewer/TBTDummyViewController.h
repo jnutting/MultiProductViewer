@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RBSDummyViewController : UIViewController
+@interface TBTDummyViewController : UIViewController
 
 @end

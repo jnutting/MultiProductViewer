@@ -1,15 +1,15 @@
 //
-//  RBSProductCell.m
+//  TBTProductCell.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
 //  Copyright (c) 2014 Rebisoft. All rights reserved.
 //
 
-#import "RBSProductCell.h"
-#import "RBSProduct.h"
+#import "TBTProductCell.h"
+#import "TBTProduct.h"
 
-@interface RBSProductCell ()
+@interface TBTProductCell ()
 
 @property (strong, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -20,7 +20,7 @@
 static NSString *defaultIconName = @"defaultIcon";
 static NSString *failedIconName = @"failedIcon";
 
-@implementation RBSProductCell
+@implementation TBTProductCell
 
 + (void)setDefaultIconName:(NSString *)name {
     defaultIconName = name;
@@ -43,7 +43,7 @@ static NSString *failedIconName = @"failedIcon";
     self.iconView.layer.masksToBounds = YES;
 }
 
-- (void)setProduct:(RBSProduct *)product {
+- (void)setProduct:(TBTProduct *)product {
     if (![product isEqual:_product]) {
         _product = product;
         self.detailsLabel.text = _product.details;

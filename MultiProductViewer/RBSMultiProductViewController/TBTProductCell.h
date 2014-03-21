@@ -1,5 +1,5 @@
 //
-//  RBSProductCell.h
+//  TBTProductCell.h
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class RBSProduct;
+@class TBTProduct;
 
-@interface RBSProductCell : UICollectionViewCell
+@interface TBTProductCell : UICollectionViewCell
 
-@property (strong, nonatomic) RBSProduct *product;
+@property (strong, nonatomic) TBTProduct *product;
 
 // These methods let you customize the names of the UIImage instances
 // used for the default icon and failed icon. The default icon is used

@@ -7,16 +7,15 @@
 //
 
 #import <StoreKit/StoreKit.h>
-#import "RBSDummyViewController.h"
-#import "RBSMultiProductViewController.h"
-#import "RBSProduct.h"
-#import "RBSProductCluster.h"
+#import "TBTDummyViewController.h"
+#import "TBTMultiProductViewController.h"
+#import "TBTProductCluster.h"
 
-@interface RBSDummyViewController () <RBSMultiProductViewControllerDelegate>
+@interface TBTDummyViewController () <RBSMultiProductViewControllerDelegate>
 
 @end
 
-@implementation RBSDummyViewController
+@implementation TBTDummyViewController
 
 - (IBAction)run:(id)sender {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"json"];
@@ -26,8 +25,8 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         if (dict) {
             NSArray *specs = dict[@"productSpecs"];
-            NSArray *productClusters = [RBSProductCluster productClustersFromSpecs:specs];
-            [RBSMultiProductViewController runWithTitle:@"Other Apps"
+            NSArray *productClusters = [TBTProductCluster productClustersFromSpecs:specs];
+            [TBTMultiProductViewController runWithTitle:@"Other Apps"
                                         productClusters:productClusters
                                                delegate:self];
         }
@@ -41,7 +40,7 @@
     }];
 }
 
-- (void)multiProductViewControllerDidFinish:(RBSMultiProductViewController *)viewController {
+- (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController {
     NSLog(@"RBSMultiProductViewController finished");
     [viewController dismissViewControllerAnimated:YES completion:^{
     }];

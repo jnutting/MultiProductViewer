@@ -1,5 +1,5 @@
 //
-//  RBSProduct.h
+//  TBTProduct.h
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-18.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RBSProduct : NSObject
+@interface TBTProduct : NSObject
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *details;

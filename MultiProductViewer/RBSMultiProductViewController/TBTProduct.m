@@ -1,17 +1,17 @@
 //
-//  RBSProduct.m
+//  TBTProduct.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-18.
 //  Copyright (c) 2014 Rebisoft. All rights reserved.
 //
 
-#import "RBSProduct.h"
+#import "TBTProduct.h"
 
-@implementation RBSProduct
+@implementation TBTProduct
 
 + (instancetype)productWithDictionary:(NSDictionary *)dict {
-    RBSProduct *product = [[self alloc] init];
+    TBTProduct *product = [[self alloc] init];
     product.name = dict[@"name"];
     product.details = dict[@"details"];
     product.identifier = dict[@"identifier"];
@@ -26,7 +26,7 @@
 + (NSArray *)productsWithArray:(NSArray *)array {
     NSMutableArray *products = [NSMutableArray arrayWithCapacity:[array count]];
     for (NSDictionary *dict in array) {
-        RBSProduct *product = [self productWithDictionary:dict];
+        TBTProduct *product = [self productWithDictionary:dict];
         [products addObject:product];
     }
     return products;

@@ -11,7 +11,7 @@
 
 @protocol RBSMultiProductViewControllerDelegate;
 
-@interface RBSMultiProductViewController : UICollectionViewController
+@interface TBTMultiProductViewController : UICollectionViewController
 
 @property (copy, nonatomic) NSArray *productClusters;
 @property (copy, nonatomic) NSString *title;
@@ -26,6 +26,6 @@
 @protocol RBSMultiProductViewControllerDelegate <SKStoreProductViewControllerDelegate>
 
 // Sent if the user requests that the page be dismissed
-- (void)multiProductViewControllerDidFinish:(RBSMultiProductViewController *)viewController;
+- (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController;
 
 @end

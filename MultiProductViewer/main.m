@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RBSAppDelegate.h"
+#import "TBTAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RBSAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TBTAppDelegate class]));
     }
 }
