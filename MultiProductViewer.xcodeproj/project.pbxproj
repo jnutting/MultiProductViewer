@@ -13,7 +13,7 @@
 		0406A90C18D7BF6C004870F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0406A90A18D7BF6C004870F4 /* InfoPlist.strings */; };
 		0406A90E18D7BF6C004870F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A90D18D7BF6C004870F4 /* main.m */; };
 		0406A91218D7BF6C004870F4 /* TBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */; };
-		0406A91418D7BF6C004870F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0406A91318D7BF6C004870F4 /* Images.xcassets */; };
+		0406A91418D7BF6C004870F4 /* TBTMultiProductImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0406A91318D7BF6C004870F4 /* TBTMultiProductImages.xcassets */; };
 		0406A91B18D7BF6C004870F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A91A18D7BF6C004870F4 /* XCTest.framework */; };
 		0406A91C18D7BF6C004870F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A90118D7BF6C004870F4 /* Foundation.framework */; };
 		0406A91D18D7BF6C004870F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406A90518D7BF6C004870F4 /* UIKit.framework */; };
@@ -52,7 +52,7 @@
 		0406A90F18D7BF6C004870F4 /* MultiProductViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiProductViewer-Prefix.pch"; sourceTree = "<group>"; };
 		0406A91018D7BF6C004870F4 /* TBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTAppDelegate.h; sourceTree = "<group>"; };
 		0406A91118D7BF6C004870F4 /* TBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTAppDelegate.m; sourceTree = "<group>"; };
-		0406A91318D7BF6C004870F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0406A91318D7BF6C004870F4 /* TBTMultiProductImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TBTMultiProductImages.xcassets; sourceTree = "<group>"; };
 		0406A91918D7BF6C004870F4 /* MultiProductViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiProductViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0406A91A18D7BF6C004870F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0406A92218D7BF6C004870F4 /* MultiProductViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiProductViewerTests-Info.plist"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				0450A45518DB43D800855185 /* TBTDummyViewController.m */,
 				0450A45618DB43D800855185 /* TBTDummyViewController.xib */,
 				04D0F2E918DC4BAE00E5C133 /* example.json */,
-				0406A91318D7BF6C004870F4 /* Images.xcassets */,
+				0406A91318D7BF6C004870F4 /* TBTMultiProductImages.xcassets */,
 				0406A90818D7BF6C004870F4 /* Supporting Files */,
 			);
 			path = MultiProductViewer;
@@ -274,7 +274,7 @@
 				0450A45818DB43D800855185 /* TBTDummyViewController.xib in Resources */,
 				04D0F2EA18DC4BAE00E5C133 /* example.json in Resources */,
 				0450A45A18DC432B00855185 /* TBTProductClusterHeaderCell.xib in Resources */,
-				0406A91418D7BF6C004870F4 /* Images.xcassets in Resources */,
+				0406A91418D7BF6C004870F4 /* TBTMultiProductImages.xcassets in Resources */,
 				048872E718D9EF910033FB5B /* TBTProductCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
