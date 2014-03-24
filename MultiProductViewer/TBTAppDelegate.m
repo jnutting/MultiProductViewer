@@ -1,5 +1,5 @@
 //
-//  RBSAppDelegate.m
+//  TBTAppDelegate.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-18.
@@ -21,7 +21,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    TBTDummyViewController *controller = [[TBTDummyViewController alloc] initWithNibName:@"RBSDummyViewController" bundle:nil];
+    TBTDummyViewController *controller = [[TBTDummyViewController alloc] initWithNibName:@"TBTDummyViewController" bundle:nil];
     self.window.rootViewController = controller;
     return YES;
 }

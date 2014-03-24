@@ -1,5 +1,5 @@
 //
-//  RBSMultiProductViewController.m
+//  TBTMultiProductViewController.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-19.
@@ -13,11 +13,19 @@
 #import "TBTProductClusterHeaderCell.h"
 #import <StoreKit/StoreKit.h>
 
+@interface TBTMultiProductViewController ()
+
+@property (copy, nonatomic) NSArray *productClusters;
+@property (copy, nonatomic) NSString *title;
+@property (weak, nonatomic) id <TBTMultiProductViewControllerDelegate> delegate;
+
+@end
+
 @implementation TBTMultiProductViewController
 
 + (void)runWithTitle:(NSString *)title
      productClusters:(NSArray *)clusters
-            delegate:(id <RBSMultiProductViewControllerDelegate>)delegate {
+            delegate:(id <TBTMultiProductViewControllerDelegate>)delegate {
     TBTMultiProductViewController *c = [[self alloc] init];
     c.title = title;
     c.productClusters = clusters;
@@ -102,7 +110,6 @@
         if (result)
 #endif
         {
-            NSLog(@"we have a result! Time to show the store view controller");
             [self dismissViewControllerAnimated:NO completion:^{
                 [[[[[UIApplication sharedApplication] windows] firstObject] rootViewController]
                  presentViewController:productViewController animated:NO completion:nil];
@@ -163,7 +170,6 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
 }
 
 - (IBAction)cancel:(id)sender {
-    NSLog(@"bar button item cancel");
     [self.delegate multiProductViewControllerDidFinish:self];
 }
 

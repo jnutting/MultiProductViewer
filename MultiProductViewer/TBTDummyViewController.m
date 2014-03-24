@@ -1,5 +1,5 @@
 //
-//  RBSDummyViewController.m
+//  TBTDummyViewController.m
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-20.
@@ -11,7 +11,7 @@
 #import "TBTMultiProductViewController.h"
 #import "TBTProductCluster.h"
 
-@interface TBTDummyViewController () <RBSMultiProductViewControllerDelegate>
+@interface TBTDummyViewController () <TBTMultiProductViewControllerDelegate>
 
 @end
 
@@ -41,7 +41,7 @@
 }
 
 - (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController {
-    NSLog(@"RBSMultiProductViewController finished");
+    NSLog(@"TBTMultiProductViewController finished");
     [viewController dismissViewControllerAnimated:YES completion:^{
     }];
 }

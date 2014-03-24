@@ -1,5 +1,5 @@
 //
-//  RBSDummyViewController.h
+//  TBTDummyViewController.h
 //  MultiProductViewer
 //
 //  Created by JN on 2014-3-20.
