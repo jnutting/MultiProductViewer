@@ -24,6 +24,11 @@ requiring you to provide the list of apps you want to show, and provide four pie
 of them: A name, Apple identifier, icon URL, and a text string with additional descriptive content.
 The configuration can be easily specified using JSON or a dictionary.
 
+How it looks:
+-----
+
+![screenshot](https://raw.github.com/thoughtbot/MultiProductViewer/screens/screens/0_0_1.png)
+
 Usage:
 -----
 
