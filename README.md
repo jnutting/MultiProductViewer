@@ -104,20 +104,12 @@ When you want to display the view, do something like this:
     }
 ```
 
-You will also need to implement a couple of delegate methods. These will tell you when nothing
-more is happening. You must dismiss the view controller passed into either of these methods.
+You can also implement an optional delegate method. This will tell you when nothing
+more is happening. The view controller passed into this method has already been dismissed.
 
 ```
-- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
-    NSLog(@"SKStoreProductViewController finished");
-    [viewController dismissViewControllerAnimated:YES completion:^{
-    }];
-}
-
 - (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController {
     NSLog(@"RBSMultiProductViewController finished");
-    [viewController dismissViewControllerAnimated:YES completion:^{
-    }];
 }
 ```
 
