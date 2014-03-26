@@ -33,16 +33,9 @@
     }
 }
 
-#pragma mark Store Kit delegate
-- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
-    NSLog(@"SKStoreProductViewController finished");
-    [viewController dismissViewControllerAnimated:YES completion:^{
-    }];
-}
+#pragma mark TBTMultiProductControllerDelegate
 
 - (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController {
     NSLog(@"TBTMultiProductViewController finished");
-    [viewController dismissViewControllerAnimated:YES completion:^{
-    }];
 }
 @end

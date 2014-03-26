@@ -13,11 +13,12 @@
 #import "TBTProductClusterHeaderCell.h"
 #import <StoreKit/StoreKit.h>
 
-@interface TBTMultiProductViewController ()
+@interface TBTMultiProductViewController () <SKStoreProductViewControllerDelegate>
 
 @property (copy, nonatomic) NSArray *productClusters;
 @property (copy, nonatomic) NSString *title;
 @property (weak, nonatomic) id <TBTMultiProductViewControllerDelegate> delegate;
+@property (strong, nonatomic) UIViewController *parent;
 
 @end
 
@@ -34,15 +35,18 @@
 }
 
 - (void)run {
-    UIViewController *appRoot = [[UIApplication sharedApplication].windows.firstObject rootViewController];
     UINavigationController *navCon = [[UINavigationController alloc] init];
     navCon.viewControllers = @[self];
-    [appRoot presentViewController:navCon animated:YES completion:nil];
+    [self.parent presentViewController:navCon animated:YES completion:nil];
 }
 
 - (instancetype)init {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    return [self initWithCollectionViewLayout:layout];
+    if (!(self = [self initWithCollectionViewLayout:
+                  [[UICollectionViewFlowLayout alloc] init]])) return nil;
+    
+    self.parent = [[UIApplication sharedApplication].windows.firstObject rootViewController];
+    
+    return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,7 +65,9 @@
     // Register cells and supplementary views
     [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:nil]
           forCellWithReuseIdentifier:@"Product"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil]
+          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                 withReuseIdentifier:@"SectionHeader"];
     
     // Configure flow layout
     UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
@@ -97,7 +103,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
-    productViewController.delegate = self.delegate;
+    productViewController.delegate = self;
     
     NSString *identifier = [self productAtIndexPath:indexPath].identifier;
     NSDictionary *params = @{SKStoreProductParameterITunesItemIdentifier : identifier};
@@ -110,12 +116,7 @@
         if (result)
 #endif
         {
-            [self dismissViewControllerAnimated:NO completion:^{
-                [[[[[UIApplication sharedApplication] windows] firstObject] rootViewController]
-                 presentViewController:productViewController animated:NO completion:nil];
-            }];
-            
-            
+            [self presentViewController:productViewController animated:YES completion:nil];
         } else {
             // The default store GUI isn't going to display. Give the user some feedback.
             [[[UIAlertView alloc] initWithTitle:@"App Store Error"
@@ -162,6 +163,12 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
     return nil;
 }
 
+#pragma mark SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark private
 
 - (TBTProduct *)productAtIndexPath:(NSIndexPath *)indexPath {
@@ -170,7 +177,11 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.delegate multiProductViewControllerDidFinish:self];
+    [self.parent dismissViewControllerAnimated:YES completion:^{
+        if ([self.delegate respondsToSelector:@selector(multiProductViewControllerDidFinish:)]) {
+            [self.delegate multiProductViewControllerDidFinish:self];
+        }
+    }];
 }
 
 @end
