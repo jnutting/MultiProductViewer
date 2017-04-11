@@ -117,7 +117,7 @@ See the included example application for full usage details.
 
 Installation
 -----
-If you're using Cocoapods, just add the following line to your Podfile:
+If you're using CocoaPods, just add the following line to your Podfile:
 ```
 pod 'MultiProductViewer'
 ```

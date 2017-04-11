@@ -16,9 +16,8 @@
 @interface TBTMultiProductViewController () <SKStoreProductViewControllerDelegate>
 
 @property (copy, nonatomic) NSArray *productClusters;
-@property (copy, nonatomic) NSString *title;
+//@property (copy, nonatomic) NSString *title;
 @property (weak, nonatomic) id <TBTMultiProductViewControllerDelegate> delegate;
-@property (strong, nonatomic) UIViewController *parent;
 
 @end
 
@@ -35,18 +34,15 @@
 }
 
 - (void)run {
+    UIViewController *appRoot = [[UIApplication sharedApplication].windows.firstObject rootViewController];
     UINavigationController *navCon = [[UINavigationController alloc] init];
     navCon.viewControllers = @[self];
-    [self.parent presentViewController:navCon animated:YES completion:nil];
+    [appRoot presentViewController:navCon animated:YES completion:nil];
 }
 
 - (instancetype)init {
-    if (!(self = [self initWithCollectionViewLayout:
-                  [[UICollectionViewFlowLayout alloc] init]])) return nil;
-    
-    self.parent = [[UIApplication sharedApplication].windows.firstObject rootViewController];
-    
-    return self;
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    return [self initWithCollectionViewLayout:layout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,9 +61,7 @@
     // Register cells and supplementary views
     [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:nil]
           forCellWithReuseIdentifier:@"Product"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil]
-          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                 withReuseIdentifier:@"SectionHeader"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
     
     // Configure flow layout
     UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
@@ -100,6 +94,16 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+#if TARGET_IPHONE_SIMULATOR
+    // In the simulator, none of this actually works, it can just hang indefinitely.
+    [[[UIAlertView alloc] initWithTitle:@"Simulator"
+                                message:[NSString stringWithFormat:
+                                         @"You need to run on a real device to see this. The simulator doesn't really do it."]
+                               delegate:self
+                      cancelButtonTitle:@"That's too bad."
+                      otherButtonTitles:nil] show];
+    [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+#else
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
@@ -110,13 +114,11 @@
     [productViewController loadProductWithParameters:params
                                      completionBlock:^(BOOL result, NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-#if TARGET_IPHONE_SIMULATOR
-        if (YES)  // In the simulator, pretend this always works (it really never does)
-#else
         if (result)
-#endif
         {
-            [self presentViewController:productViewController animated:YES completion:nil];
+            [self
+             presentViewController:productViewController animated:YES completion:nil];
+            
         } else {
             // The default store GUI isn't going to display. Give the user some feedback.
             [[[UIAlertView alloc] initWithTitle:@"App Store Error"
@@ -129,6 +131,7 @@
         }
         [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }];
+#endif
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView
@@ -163,10 +166,12 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
     return nil;
 }
 
-#pragma mark SKStoreProductViewControllerDelegate
+#pragma mark Store Kit delegate
 
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
-    [viewController dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"SKStoreProductViewController finished");
+    [viewController dismissViewControllerAnimated:YES completion:^{
+    }];
 }
 
 #pragma mark private
@@ -177,7 +182,8 @@ shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath; {
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.parent dismissViewControllerAnimated:YES completion:^{
+    UIViewController *appRoot = [[UIApplication sharedApplication].windows.firstObject rootViewController];
+    [appRoot dismissViewControllerAnimated:YES completion:^{
         if ([self.delegate respondsToSelector:@selector(multiProductViewControllerDidFinish:)]) {
             [self.delegate multiProductViewControllerDidFinish:self];
         }

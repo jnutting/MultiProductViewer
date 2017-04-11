@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBTProductCluster : UICollectionViewController
+@interface TBTProductCluster : NSObject
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSArray *products;

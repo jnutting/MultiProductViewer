@@ -29,14 +29,11 @@
 
 @end
 
-@protocol TBTMultiProductViewControllerDelegate <NSObject>
-
-@optional
+@protocol TBTMultiProductViewControllerDelegate <SKStoreProductViewControllerDelegate>
 
 /*! Sent if the user requests that the page be dismissed by tapping Cancel.
- * At the time this method is called, the view controller has already been
- * dismissed.
- * \param viewController The view controller that was being displayed.
+ * The receiver must dismiss the modal session when this method is called.
+ * \param viewController The view controller that needs to be dismissed.
  */
 - (void)multiProductViewControllerDidFinish:(TBTMultiProductViewController *)viewController;
 
