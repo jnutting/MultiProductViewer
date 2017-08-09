@@ -59,9 +59,9 @@
     [super viewDidLoad];
     
     // Register cells and supplementary views
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:nil]
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:[NSBundle bundleForClass:[self class]]]
           forCellWithReuseIdentifier:@"Product"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:[NSBundle bundleForClass:[self class]]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
     
     // Configure flow layout
     UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
