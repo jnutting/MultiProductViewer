@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MultiProductViewer'
-  s.version = '0.0.5'
+  s.version = '0.0.6'
   s.license = 'MIT'
   s.homepage = 'https://github.com/jnutting/MultiProductViewer'
   s.summary = 'In an iOS app, present a listing of other apps to users'
@@ -16,8 +16,10 @@ DESC
     :tag => s.version.to_s
   }
   s.source_files = 'MultiProductViewer/TBTMultiProductViewController/*.{h,m}'
-  s.resources = ['MultiProductViewer/TBTMultiProductImages.xcassets',
-		 'MultiProductViewer/TBTMultiProductViewController/*.xib']
+  s.resource_bundles = {
+    'MultiProductViewer' => ['MultiProductViewer/TBTMultiProductImages.xcassets',
+		  'MultiProductViewer/TBTMultiProductViewController/*.xib']
+  }
 
   s.requires_arc = true
 end
