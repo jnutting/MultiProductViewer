@@ -10,7 +10,7 @@ DESC
   s.authors = 'Jack Nutting'
   s.social_media_url = 'http://twitter.com/jacknutting'
 
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '15.6'
   s.source = {
     :git => 'https://github.com/jnutting/MultiProductViewer.git',
     :tag => s.version.to_s
