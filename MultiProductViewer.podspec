@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'MultiProductViewer'
-  s.version = '0.0.7'
+  s.version = '0.0.8'
   s.license = 'MIT'
   s.homepage = 'https://github.com/jnutting/MultiProductViewer'
   s.summary = 'In an iOS app, present a listing of other apps to users'

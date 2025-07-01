@@ -57,11 +57,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    // Figure out where our resources live. Hope this works now!
+    NSString *podBundlePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MultiProductViewer" ofType:@"bundle"];
+    NSBundle *podBundle = [NSBundle bundleWithPath:podBundlePath];
+
     // Register cells and supplementary views
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:[NSBundle bundleForClass:[self class]]]
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductCell" bundle:podBundle]
           forCellWithReuseIdentifier:@"Product"];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:[NSBundle bundleForClass:[self class]]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TBTProductClusterHeaderCell" bundle:podBundle] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
     
     // Configure flow layout
     UICollectionViewFlowLayout *layout = (id)[self collectionViewLayout];
