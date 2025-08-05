@@ -2,6 +2,14 @@ MultiProductViewer implements a GUI for displaying multiple App Store products i
 By tapping on a product, the user is taken to a page where they can see more info about the app and
 purchase it, using SKStoreProductViewController.
 
+# Important Note:
+
+This project has been updated recently (July 2025) to allow it to work with current Xcode and 
+Cocoapods versions. However, the latest previous update was August 2017, and it hadn't really been 
+worked on in a meaningful way since March 2014. This project should be considered defunct. I'd 
+recommend anyone who's interested to instead use [AppStoreCatalog](https://github.com/jnutting/AppStoreCatalog),
+which is a fresh implementation of this concept implemented in SwiftUI and available via SPM.
+
 Background:
 -----
 
